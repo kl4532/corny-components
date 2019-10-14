@@ -1,0 +1,94 @@
+$hcolor: rgb(221, 125, 0);
+$scolor: #ffff;
+$hwidth: 50px;
+$hheight: 50px;
+
+*{
+    color: #ffff;
+    ul{
+        list-style: none;
+        padding: 0;
+        margin:0;
+    }
+}
+
+.menu-wrap{
+    display: flexbox;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    .hamburger {
+        position: relative;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        width: $hwidth;
+        height: $hheight;
+        display: flex;
+        margin: auto;
+        margin: 0;
+        background: $hcolor;
+        #stripe2,#stripe4{
+            position: absolute;
+            top: (($hheight)*0.5)-($hheight)*0.025;
+            left: ($hwidth)*0.15;
+            width: 70%;
+            height: ($hheight)*0.05;
+            background-color: $scolor;
+            transition: all 0.4s ease;
+        }
+        #stripe1, #stripe3{
+            position: absolute;
+            left: ($hwidth)*0.15;
+            width: 70%;
+            background: $scolor;
+            top: (($hheight)*0.30)-($hheight)*0.025;
+            height: ($hheight)*0.05;
+            transition: all 0.2s ease;
+        }
+        #stripe3{
+            background: $scolor;
+            top: (($hheight)*0.7)-($hheight)*0.025;
+        }
+    }
+    .menu{
+        // position: absolute;
+        color: #fff;
+        background: rgba(146, 161, 224, 0.95);
+        transition: all 0.3s ease;
+        transform-origin: 0% 0%;
+        transform: translate(-150%, 0);
+        padding: 0;
+        height: 100%;
+        
+        ul{
+            li{
+                padding: 10px 5px;
+                border-top: 1px solid rgb(25, 0, 255);
+            }
+            li:first-child{
+                border-top: none;
+            }
+        }
+    }
+    .visible{
+        transform: none;
+    }
+}
+nav{
+    position: relative;
+}
+.content{
+    text-align: center;
+    div:nth-child(odd) {
+        background: red;
+    }
+      
+    div:nth-child(even) {
+        background: blue;
+    }
+}
+.block{
+    height: 100vh;
+}

@@ -28,28 +28,25 @@ $hheight: 50px;
         display: flex;
         margin: auto;
         margin: 0;
-        background: $hcolor;
-        #stripe2,#stripe4{
+        background-color: $hcolor;
+        #s1,#s2,#s3, #s4{
             position: absolute;
-            top: (($hheight)*0.5)-($hheight)*0.025;
-            left: ($hwidth)*0.15;
-            width: 70%;
-            height: ($hheight)*0.05;
+            width: 60%;
             background-color: $scolor;
+            height: ($hheight)*0.05;
+            left: ($hwidth)*0.20;
+        }
+        #s2,#s3{
+            top: (($hheight)*0.5)-($hheight)*0.025;
             transition: all 0.4s ease;
         }
-        #stripe1, #stripe3{
-            position: absolute;
-            left: ($hwidth)*0.15;
-            width: 70%;
-            background: $scolor;
-            top: (($hheight)*0.30)-($hheight)*0.025;
-            height: ($hheight)*0.05;
+        #s1, #s4{
+            top: (($hheight)*0.35)-($hheight)*0.025;
             transition: all 0.2s ease;
         }
-        #stripe3{
+        #s4{
             background: $scolor;
-            top: (($hheight)*0.7)-($hheight)*0.025;
+            top: (($hheight)*0.65)-($hheight)*0.025;
         }
     }
     .menu{
@@ -61,7 +58,6 @@ $hheight: 50px;
         transform: translate(-150%, 0);
         padding: 0;
         height: 100%;
-        
         ul{
             li{
                 padding: 10px 5px;
@@ -79,16 +75,8 @@ $hheight: 50px;
 nav{
     position: relative;
 }
-.content{
-    text-align: center;
-    div:nth-child(odd) {
-        background: red;
-    }
-      
-    div:nth-child(even) {
-        background: blue;
-    }
-}
 .block{
+    text-align: center;
+    color: black;
     height: 100vh;
 }

@@ -17,10 +17,10 @@ storiesOf('test-btn', module)
       myEvent: action('Hello Jane!')
     },
   }))
-  .add('Joe', () => ({
+  .add('Doe', () => ({
     component: TestBtnComponent,
     props: {
-      name: 'Joe',
+      name: 'Doe',
       myEvent: action('Hello Joe!')
     },
   }));

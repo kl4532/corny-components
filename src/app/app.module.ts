@@ -5,13 +5,15 @@ import { AppComponent } from './app.component';
 import { TestBtnComponent } from './test-btn/test-btn.component';
 import { HamburgerMenuComponent } from './hamburger-menu/hamburger-menu.component';
 import { SearchbarComponent } from './searchbar/searchbar.component';
+import { HideLinkComponent} from './hide-link/hide-link.component'
 
 @NgModule({
   declarations: [
     AppComponent,
     TestBtnComponent,
     HamburgerMenuComponent,
-    SearchbarComponent
+    SearchbarComponent,
+    HideLinkComponent
   ],
   imports: [
     BrowserModule

@@ -9,15 +9,16 @@ import { Component, OnInit, Input, Output, EventEmitter  } from '@angular/core';
 })
 export class SearchbarComponent implements OnInit {
 
-  @Input() placeholder;
+  @Input() placeholder: string;
   @Output() value = new EventEmitter<string>();
 
   constructor() {}
 
   ngOnInit() {
-    let el = document.querySelector('input');
-    typeof this.placeholder !== 'undefined' ? el.placeholder = this.placeholder : el.placeholder = "";
+    const input = document.querySelector('input');
+    typeof this.placeholder !== 'undefined' ? input.placeholder = this.placeholder : input.placeholder = "";
   }
+
   emitText(){
     this.value.emit(document.querySelector('input').value);
   }

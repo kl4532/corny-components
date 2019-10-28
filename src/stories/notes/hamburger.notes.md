@@ -1,2 +1,0 @@
-# Hamburger menu
-Basic example

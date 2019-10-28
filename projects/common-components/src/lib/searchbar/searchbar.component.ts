@@ -1,4 +1,6 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter  } from '@angular/core';
+
+
 
 @Component({
   selector: 'searchbar',
@@ -8,11 +10,15 @@ import { Component, OnInit, Input } from '@angular/core';
 export class SearchbarComponent implements OnInit {
 
   @Input() placeholder;
+  @Output() value = new EventEmitter<string>();
 
   constructor() {}
 
   ngOnInit() {
-    let el = document.getElementsByTagName('input')[0];
+    let el = document.querySelector('input');
     typeof this.placeholder !== 'undefined' ? el.placeholder = this.placeholder : el.placeholder = "";
+  }
+  emitText(){
+    this.value.emit(document.querySelector('input').value);
   }
 }

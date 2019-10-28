@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'hamburger-menu',
@@ -23,6 +23,7 @@ export class HamburgerMenuComponent implements OnInit {
   }
   @Input('hcolor') hcolor: string;
   @Input('hstripes') hstripes: string;
+  @Output() visible = new EventEmitter<boolean>();
 
   toggle(){
     if(this.open){
@@ -30,14 +31,16 @@ export class HamburgerMenuComponent implements OnInit {
       document.getElementById("s3").style.transform = "rotate(180deg)";
       document.getElementById("s1").style.opacity = "1";
       document.getElementById("s4").style.opacity = "1";
-      document.getElementById("menu").classList.toggle("visible", false);
+      this.visible.emit(false);
+      // document.getElementById("menu").classList.toggle("visible", false);
       this.open = !this.open;
     }else{
       document.getElementById("s2").style.transform = "rotate(135deg)";
       document.getElementById("s3").style.transform = "rotate(-135deg)";
       document.getElementById("s1").style.opacity = "0";
       document.getElementById("s4").style.opacity = "0";
-      document.getElementById("menu").classList.toggle("visible", true);
+      this.visible.emit(true);
+      // document.getElementById("menu").classList.toggle("visible", true);
       this.open = !this.open;
     }
   }

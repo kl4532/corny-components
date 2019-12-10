@@ -1,15 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'lib-common-components',
+  selector: 'lib-corny-components',
   template: `
     <p>
-      common-components works!
+      corny-components works!
     </p>
   `,
   styles: []
 })
-export class CommonComponentsComponent implements OnInit {
+export class CornyComponentsComponent implements OnInit {
 
   constructor() { }
 

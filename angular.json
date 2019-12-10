@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "corny-components": {
+    "my-components": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/corny-components",
+            "outputPath": "dist/my-components",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -67,18 +67,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "corny-components:build"
+            "browserTarget": "my-components:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "corny-components:build:production"
+              "browserTarget": "my-components:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "corny-components:build"
+            "browserTarget": "my-components:build"
           }
         },
         "test": {
@@ -115,11 +115,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "corny-components:serve"
+            "devServerTarget": "my-components:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "corny-components:serve:production"
+              "devServerTarget": "my-components:serve:production"
             }
           }
         }
@@ -159,6 +159,41 @@
           }
         }
       }
+    },
+    "corny-components": {
+      "projectType": "library",
+      "root": "projects/corny-components",
+      "sourceRoot": "projects/corny-components/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/corny-components/tsconfig.lib.json",
+            "project": "projects/corny-components/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/corny-components/src/test.ts",
+            "tsConfig": "projects/corny-components/tsconfig.spec.json",
+            "karmaConfig": "projects/corny-components/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/corny-components/tsconfig.lib.json",
+              "projects/corny-components/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }},
-  "defaultProject": "corny-components"
+  "defaultProject": "my-components"
 }

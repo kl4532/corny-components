@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
-import { CommonComponentsComponent } from './common-components.component';
+
+import { CornyComponentsComponent } from './corny-components.component';
 import { SearchbarComponent } from './searchbar/searchbar.component';
 import { HamburgerMenuComponent } from './hamburger-menu/hamburger-menu.component';
 import { HideLinkComponent } from './hide-link/hide-link.component';
@@ -10,13 +11,14 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 
 
+
 @NgModule({
-  declarations: [CommonComponentsComponent, SearchbarComponent, HamburgerMenuComponent, HideLinkComponent],
+  declarations: [CornyComponentsComponent, SearchbarComponent, HamburgerMenuComponent, HideLinkComponent],
   imports: [
     FormsModule,
     ReactiveFormsModule,
     BrowserModule,
   ],
-  exports: [CommonComponentsComponent]
+  exports: [CornyComponentsComponent]
 })
-export class CommonComponentsModule { }
+export class CornyComponentsModule { }

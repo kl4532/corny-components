@@ -11,6 +11,7 @@ export class SearchbarComponent implements OnInit {
 
   @Input() placeholder: string;
   @Output() value = new EventEmitter<string>();
+  @Input() iconUrl: string;
 
   constructor() {}
 

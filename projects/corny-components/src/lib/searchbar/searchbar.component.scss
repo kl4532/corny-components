@@ -1,0 +1,13 @@
+.frame {
+    border: 1px solid black;
+    display: inline-block;
+}
+input, button {
+    border: none;
+    padding: 5px;
+    outline: none;
+}
+button {
+    background-color: inherit;
+    border-left: 1px solid black;
+}

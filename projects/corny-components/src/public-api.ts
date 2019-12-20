@@ -2,7 +2,6 @@
  * Public API Surface of corny-components
  */
 
-export * from './lib/corny-components.service';
 export * from './lib/corny-components.component';
 export * from './lib/corny-components.module';
 

@@ -9,11 +9,12 @@ import { HideLinkComponent } from './hide-link/hide-link.component';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
+import { TreeButtonComponent } from './tree-button/tree-button.component';
 
 
 
 @NgModule({
-  declarations: [CornyComponentsComponent, SearchbarComponent, HamburgerMenuComponent, HideLinkComponent],
+  declarations: [CornyComponentsComponent, SearchbarComponent, HamburgerMenuComponent, HideLinkComponent, TreeButtonComponent],
   imports: [
     FormsModule,
     ReactiveFormsModule,

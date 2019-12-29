@@ -194,6 +194,12 @@
           }
         }
       }
-    }},
-  "defaultProject": "my-components"
+    }
+  },
+  "defaultProject": "my-components",
+  "schematics": {
+    "@schematics/angular:component": {
+      "styleext": "scss"
+    }
+  }
 }

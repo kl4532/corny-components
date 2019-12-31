@@ -1,1 +1,10 @@
-<button (click)="toggle()">+</button>
+<div class="tree-frame">
+    <ul *ngFor="let category of categories; index as i">
+        <li> 
+            <label for="">{{ category.name }}</label> 
+            <button  (click)="toggle(i)">+</button>
+            <ng-container *ngIf="open">
+            </ng-container>
+        </li>
+    </ul>
+</div>

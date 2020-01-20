@@ -2,12 +2,10 @@
     <ul>
         <li id="{{ category.id }}"> 
             <label for="">{{ category.name }}</label> 
-            <!-- <button (click)="toggle(category, i)" *ngIf="category.subcategory">+</button> -->
-            <button (click)="toggle(category, i)" *ngIf="category.subcategory" >+</button>
-            <ng-container>
+            <button (click)="toggle(category, i)" *ngIf="category.subcategory">+</button>
+            <ng-container *ngIf="open === category.id">
                 <tree-button [categories]="category.subcategory" *ngIf="category.subcategory"></tree-button>
             </ng-container>
-            
         </li>
     </ul>
 </div>

@@ -14,18 +14,8 @@ export class TreeButtonComponent implements OnInit {
   ngOnInit() {
   }
 
-  toggle(category, i) {
-    const btn = document.getElementsByTagName('button')[i];
+  toggle(category) {
     this.open === category.id ? this.open = 0 : this.open = category.id;
-    //need to fix +/- change
-    // if(!this.open){
-    //   // btn.innerHTML = "-";
-    //   this.open = category.id;
-    // }else {
-    //   // btn.innerHTML = "+";
-    //   this.open = 0;  
-    // }
-    // open ? btn.innerHTML = "-" : btn.innerHTML = "+"; 
   }
 
 }

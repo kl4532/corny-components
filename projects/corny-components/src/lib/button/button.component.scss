@@ -1,21 +1,38 @@
 .btn {
-    padding:10px;
+    padding: 0.5em 1em;
     background-color: rgb(66, 94, 255);
     color: #ffffff;
-    border-radius: 20%;
+    border-radius: 5%;
+    border: none;
     &:hover {
         background-color: rgb(66, 94, 255, 0.8);
     }
+    outline: none;
+
 }
-.text-button .outlined {
+.btn[disabled]{
+    background-color: #dddddd;
+}
+
+
+.btn-text, .btn-outlined {
     background-color: inherit;
     color: inherit;
     border: none;
     &:hover {
-        background-color: rgb(116, 164, 192);
+        background-color: rgb(228, 234, 238);
+    }
+}
+.btn-text[disabled], .btn-outlined[disabled]{
+    background-color: inherit;
+    color: #8d8d8d;
+    &:hover{
+        background-color: inherit;
     }
 }
 
-.outlined {
+.btn-outlined {
+    color: black;
+    background-color: inherit;
     border: 0.5px solid rgb(66, 94, 255);
 }

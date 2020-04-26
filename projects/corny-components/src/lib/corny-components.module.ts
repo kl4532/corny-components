@@ -1,15 +1,13 @@
 import { NgModule } from '@angular/core';
-
-import { CornyComponentsComponent } from './corny-components.component';
-import { SearchbarComponent } from './searchbar/searchbar.component';
-import { HideLinkComponent } from './hide-link/hide-link.component';
-
-
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
-import { TreeButtonComponent } from './tree-button/tree-button.component';
 
+import { CornyComponentsComponent } from './corny-components.component';
+import { ButtonComponent } from './button/button.component';
+import { SearchbarComponent } from './searchbar/searchbar.component';
+import { TreeButtonComponent } from './tree-button/tree-button.component';
+import { HideLinkComponent } from './hide-link/hide-link.component';
 
 
 @NgModule({
@@ -17,7 +15,9 @@ import { TreeButtonComponent } from './tree-button/tree-button.component';
     CornyComponentsComponent, 
     SearchbarComponent, 
     HideLinkComponent, 
-    TreeButtonComponent],
+    TreeButtonComponent,
+    ButtonComponent,
+  ],
   imports: [
     FormsModule,
     ReactiveFormsModule,

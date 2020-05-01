@@ -8,8 +8,16 @@
         background-color: rgb(66, 94, 255, 0.8);
     }
     outline: none;
-
+    &:focus {
+        outline: 1px solid rgb(0, 0, 0);
+        outline-offset: 1px;
+    }
 }
+
+.activated {
+    background-color: rgb(221, 245, 4) !important;
+}
+
 .btn[disabled]{
     background-color: #dddddd;
 }
@@ -21,6 +29,9 @@
     border: none;
     &:hover {
         background-color: rgb(228, 234, 238);
+    }
+    &:focus {
+        outline-offset: -3px;
     }
 }
 .btn-text[disabled], .btn-outlined[disabled]{

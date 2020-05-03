@@ -1,5 +1,5 @@
 #!/bin/bash
-# To replace component names run -> bash replace.sh base <newComponentName> 
+# To create new component names run -> bash replace.sh base <newComponentName> 
 
 search=$1
 replace=$2
@@ -27,3 +27,9 @@ else
     done
     rm new.sh
 fi
+
+exportInPublicAPI="export \* from \'.\/lib\/${replace}\/${replace}.component\'\;"
+
+cd ../../
+sed -i "/AddedByScript/ a ${exportInPublicAPI}" public-api.ts
+echo "Component exported in public-api.ts"

@@ -1,0 +1,44 @@
+$width: 20px;
+$heigth: 20px;
+
+.input-container {
+    input[type=checkbox]:not(old) {
+        opacity: 0;
+        width: $width; 
+        height: $heigth;
+        padding: 0;
+        margin: 0;
+        cursor: pointer;
+    }
+
+    input[type=checkbox]:checked + label:after {
+        content: "\2713";
+        font-size: 18px;
+    }
+
+    label {
+        position: relative;
+    }
+
+    label::after {
+        content: "";
+        position: absolute;
+        top: -5px; 
+        left: -20px; /*cover the default input */
+        width: $width; 
+        height: $heigth;
+        border-radius: 5%;
+        background-color: inherit;
+        border: 1px solid black;
+        transform: rotate(0);
+        pointer-events: none;
+        text-align: center;
+        color: rgb(0, 0, 0);
+    }
+
+    &:focus-within {
+        label::after {
+            outline: 2px solid black;
+        }
+    }
+}

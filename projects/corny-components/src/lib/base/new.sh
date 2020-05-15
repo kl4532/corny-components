@@ -1,5 +1,5 @@
 #!/bin/bash
-# To create new component names run -> bash replace.sh base <newComponentName> 
+# To create new component names run -> bash new.sh base <newComponentName> 
 
 search=$1
 replace=$2
@@ -29,7 +29,12 @@ else
 fi
 
 exportInPublicAPI="export \* from \'.\/lib\/${replace}\/${replace}.component\'\;"
+importEx="import \{ ${replace^}Component \}  from \'.\/${replace}\/${replace}.component\'\;";
 
-cd ../../
+cd ../
+sed -i "/Imports addedByScript/ a ${importEx}" corny-components.module.ts
+sed -i "/Declarations addedByScript/ a ${replace^}Component," corny-components.module.ts
+
+cd ../
 sed -i "/AddedByScript/ a ${exportInPublicAPI}" public-api.ts
 echo "Component exported in public-api.ts"

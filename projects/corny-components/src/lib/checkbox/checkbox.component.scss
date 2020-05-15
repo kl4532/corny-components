@@ -1,7 +1,28 @@
 $width: 20px;
 $heigth: 20px;
 
-.input-container {
+.box {
+    display: flex;
+    flex-direction: row;
+}
+
+.label-left {
+    #checkbox-input { 
+        padding-left: 5px;
+        order: 2; 
+    }
+    #checkbox-label { order: 1; }
+}
+
+.label-right {
+    #checkbox-input { 
+        padding-right: 5px;
+        order: 1; 
+    }
+    #checkbox-label { order: 2; }
+}
+
+.input-box {
     input[type=checkbox]:not(old) {
         opacity: 0;
         width: $width; 

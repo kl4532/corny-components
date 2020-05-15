@@ -1,6 +1,7 @@
-<div class="customCheckbox">
-    <div class="input-container">
-      <input type="checkbox"/>
-      <label for="customCheckboxInput"></label>
+<div class="box" [ngClass]="{'label-left': labelPosition ==='left', 'label-right': labelPosition ==='right'}">
+    <div id="checkbox-input" class="input-box">
+      <input name="checkbox" type="checkbox" [checked]="selected"/>
+      <label for="checkbox"></label>
     </div>
+    <label id="checkbox-label" *ngIf="val" for="checkbox">{{ val }}</label>
 </div>

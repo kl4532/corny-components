@@ -8,6 +8,10 @@ import { ButtonComponent } from './button/button.component';
 import { SearchbarComponent } from './searchbar/searchbar.component';
 import { TreeButtonComponent } from './tree-button/tree-button.component';
 import { HideLinkComponent } from './hide-link/hide-link.component';
+import { CommonModule } from '@angular/common';
+import { CheckboxComponent } from './checkbox/checkbox.component';
+// Imports addedByScript
+
 
 
 @NgModule({
@@ -17,11 +21,13 @@ import { HideLinkComponent } from './hide-link/hide-link.component';
     HideLinkComponent, 
     TreeButtonComponent,
     ButtonComponent,
+    CheckboxComponent,
+    // Declarations addedByScript
   ],
   imports: [
+    CommonModule,
     FormsModule,
-    ReactiveFormsModule,
-    BrowserModule,
+    ReactiveFormsModule
   ],
   exports: [CornyComponentsComponent]
 })

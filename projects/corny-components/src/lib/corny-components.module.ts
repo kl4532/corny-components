@@ -11,7 +11,6 @@ import { HideLinkComponent } from './components/hide-link/hide-link.component';
 import { CommonModule } from '@angular/common';
 import { CheckboxComponent } from './components/checkbox/checkbox.component';
 // Imports addedByScript
-import { TestCompoComponent }  from './components/testCompo/testCompo.component';
 import { DropdownComponent }  from './components/dropdown/dropdown.component';
 
 
@@ -25,7 +24,6 @@ import { DropdownComponent }  from './components/dropdown/dropdown.component';
     ButtonComponent,
     CheckboxComponent,
     // Declarations addedByScript
-TestCompoComponent,
 DropdownComponent,
   ],
   imports: [

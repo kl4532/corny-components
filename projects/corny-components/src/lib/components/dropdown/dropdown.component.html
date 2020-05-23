@@ -1,0 +1,18 @@
+<div class="ui-dropdown" (click)="open=!open">
+    <div>
+        <span class="ui-dropdown-selected">{{ selected }}</span>
+        <span class="ui-dropdown-icon" *ngIf="!open;"> &#11167;</span>
+        <span class="ui-dropdown-icon" *ngIf="open;">&#11165;</span>
+    </div>
+    <div class="ui-dropdown-overlay" *ngIf="open" >
+        <div *ngIf="filter">
+            <input type="text" >
+            <span>&#128269;</span>
+        </div>
+        <ul name="" id="">
+            <li (click)="selected=opt" *ngFor="let opt of options" value="">{{ opt }}</li>
+        </ul>
+    </div>
+</div>
+
+ 

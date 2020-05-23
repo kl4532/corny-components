@@ -28,10 +28,10 @@ else
     rm new.sh
 fi
 
-exportInPublicAPI="export \* from \'.\/lib\/${replace}\/${replace}.component\'\;"
-importEx="import \{ ${replace^}Component \}  from \'.\/${replace}\/${replace}.component\'\;";
+exportInPublicAPI="export \* from \'.\/lib\/components\/${replace}\/${replace}.component\'\;"
+importEx="import \{ ${replace^}Component \}  from \'.\/components\/${replace}\/${replace}.component\'\;";
 
-cd ../
+cd ../../
 sed -i "/Imports addedByScript/ a ${importEx}" corny-components.module.ts
 sed -i "/Declarations addedByScript/ a ${replace^}Component," corny-components.module.ts
 

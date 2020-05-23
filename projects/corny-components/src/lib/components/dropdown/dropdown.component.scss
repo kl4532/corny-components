@@ -1,0 +1,35 @@
+
+
+.ui-dropdown {
+    padding: .3em;
+    outline: 1px solid brown;
+    position: relative;
+    width: auto;
+    max-width: 12.5em; 
+
+    .ui-dropdown-icon {
+        float: right;
+    }
+
+    .ui-dropdown-selected {
+        padding-right: 1em;
+    }
+
+    .ui-dropdown-overlay {
+        position: absolute;
+        top: 3em;
+        width: 100%;
+        border: brown;
+        ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            li {
+                &:hover {
+                    padding: 0.3em 0;
+                    background-color: rgba(144, 59, 224, 0.554);
+                };
+            }
+        }
+    }
+}

@@ -9,7 +9,7 @@ export class CheckboxComponent implements OnInit {
 
   constructor() {}
 
-  @Input() selected: boolean = false;
+  @Input() checked: boolean = false;
   @Input() val: string;
   @Input() labelPosition: string = 'right';
   ngOnInit() {}

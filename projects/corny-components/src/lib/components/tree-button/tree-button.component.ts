@@ -1,5 +1,4 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { HideLinkComponent } from '../hide-link/hide-link.component';
 
 @Component({
   selector: 'tree-button',

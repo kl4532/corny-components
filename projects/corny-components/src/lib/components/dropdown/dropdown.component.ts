@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, HostListener, ElementRef } from '@angular/core';
+import { Component, OnInit, Input, HostListener, ElementRef, asNativeElements } from '@angular/core';
 
 @Component({
   selector: 'c-dropdown',
@@ -13,7 +13,7 @@ export class DropdownComponent implements OnInit {
   open = false;
   childIndex=0;
   currentChild: HTMLElement;
-  list: any;
+  list: HTMLElement;
 
   
   constructor(private element: ElementRef) {
@@ -21,7 +21,7 @@ export class DropdownComponent implements OnInit {
 
   ngOnInit() {
   }
-
+  
   @HostListener('window:keydown', ['$event'])
   keyNavigation(event: KeyboardEvent) {
     this.list = this.element.nativeElement.querySelector("ul");
@@ -29,10 +29,9 @@ export class DropdownComponent implements OnInit {
       if(this.childIndex < this.options.length) {
         this.selected = this.options[this.childIndex];
         if(this.open) {
-          this.list.children[this.childIndex].focus();
+          (<HTMLElement>this.list.children[this.childIndex]).focus();
         }
         this.childIndex === this.options.length-1 ? null : this.childIndex++;
-        console.log(this.childIndex);
       }
     }
 
@@ -41,19 +40,18 @@ export class DropdownComponent implements OnInit {
         this.childIndex--;
         this.selected = this.options[this.childIndex];
         if(this.open) {
-          this.list.children[this.childIndex].focus();
+          (<HTMLElement>this.list.children[this.childIndex]).focus();
         }
       }
     }
 
     if (event.key === "Escape") {
       this.open = false;
-      console.log("Esc pushed");
+      this.element.nativeElement.querySelector(".ui-dropdown").focus();
     }
 
     if (event.key === " ") {
       this.open = true;
-      console.log("space pushed");
     }
   }
   

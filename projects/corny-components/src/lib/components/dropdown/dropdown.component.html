@@ -1,4 +1,4 @@
-<div class="ui-dropdown" (click)="open=!open">
+<div tabindex="0" class="ui-dropdown" (click)="open=!open" (focusout)="open=false">
     <div>
         <span class="ui-dropdown-selected">{{ selected }}</span>
         <span class="ui-dropdown-icon" *ngIf="!open;"> &#11167;</span>
@@ -9,8 +9,8 @@
             <input type="text" >
             <span>&#128269;</span>
         </div>
-        <ul name="" id="">
-            <li (click)="selected=opt" *ngFor="let opt of options" value="">{{ opt }}</li>
+        <ul name="" id="dropdown-list">
+            <li tabindex="0" (click)="selected=opt" *ngFor="let opt of options" value="" (focus)="open=true" (focusout)="open=false" >{{ opt }}</li>
         </ul>
     </div>
 </div>

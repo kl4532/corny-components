@@ -2,10 +2,15 @@
 
 .ui-dropdown {
     padding: .3em;
-    outline: 1px solid brown;
+    border: 1px solid brown;
     position: relative;
     width: auto;
     max-width: 12.5em; 
+    cursor: pointer;
+    &:focus {
+        outline: 1px solid brown;
+        outline-offset: 1px;
+    }
 
     .ui-dropdown-icon {
         float: right;
@@ -17,18 +22,28 @@
 
     .ui-dropdown-overlay {
         position: absolute;
-        top: 3em;
+        top: 2em;
+        left: 0;
         width: 100%;
-        border: brown;
+        border-radius: 3px;
+        box-shadow: 0 0 3px rgb(146, 146, 146);
+        
+        max-height: 100px;
+        overflow: auto;
         ul {
             margin: 0;
             padding: 0;
             list-style: none;
             li {
+                padding: .3em 0 .3em .2em;
                 &:hover {
-                    padding: 0.3em 0;
-                    background-color: rgba(144, 59, 224, 0.554);
+                    background-color: rgba(155, 73, 231, 0.417);
                 };
+                &:focus {
+                    outline: none;
+                    background-color: rgba(144, 59, 224, 0.554);
+                }
+
             }
         }
     }

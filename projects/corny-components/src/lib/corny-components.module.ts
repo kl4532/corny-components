@@ -12,6 +12,7 @@ import { CommonModule } from '@angular/common';
 import { CheckboxComponent } from './components/checkbox/checkbox.component';
 // Imports addedByScript
 import { DropdownComponent }  from './components/dropdown/dropdown.component';
+import { FocusedDirective } from './directives/focused.directive';
 
 
 
@@ -25,6 +26,7 @@ import { DropdownComponent }  from './components/dropdown/dropdown.component';
     CheckboxComponent,
     // Declarations addedByScript
 DropdownComponent,
+    FocusedDirective,
   ],
   imports: [
     CommonModule,

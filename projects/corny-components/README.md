@@ -22,3 +22,9 @@ Run `ng test corny-components` to execute the unit tests via [Karma](https://kar
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+## NPM link for local app
+
+1. Install node dependencies `npm install`
+2. Build components `ng build corny-components`
+3. Go to dist dir `cd dist/corny-components` and create link in global node_modules `sudo npm link`.

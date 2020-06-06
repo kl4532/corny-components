@@ -1,18 +1,21 @@
-<div tabindex="0" class="ui-dropdown" (click)="open=!open">
+<div tabindex="0" class="ui-dropdown" (click)="open=!open;">
     <div>
         <span class="ui-dropdown-selected">{{ selected }}</span>
         <span class="ui-dropdown-icon" *ngIf="!open;"> &#11167;</span>
         <span class="ui-dropdown-icon" *ngIf="open;">&#11165;</span>
     </div>
-    <div class="ui-dropdown-overlay" *ngIf="open" >
-        <div *ngIf="filter">
-            <input type="text" >
-            <span>&#128269;</span>
+    <div class="ui-dropdown-overlay" *ngIf="open">
+        <div class="ui-dropdown-filter" *ngIf="filter">
+            <input [(ngModel)]="inputFilter" (input)="inputFilter.length > 0 ? filterOptions() : 0" id="input-filter" type="text" (click)="$event.stopPropagation()">
         </div>
         <ul name="" id="dropdown-list">
-            <li tabindex="0" (click)="selected=opt; childIndex=i" *ngFor="let opt of options; index as i" value="" (focus)="open=true" (focusout)="open=false" >{{ opt }}</li>
+            <ng-container *ngIf = "filter && inputFilter.length>0;">
+                <li tabindex="0" (click)="selected=opt; childIndex=i" *ngFor="let opt of optionsFiltered; index as i" (focus)="open=true">{{ opt }}</li>
+            </ng-container>
+            <ng-container *ngIf = "!filter || inputFilter.length==0;">
+                <li tabindex="0" (click)="selected=opt; childIndex=i" *ngFor="let opt of options; index as i" (focus)="open=true">{{ opt }}</li>
+            </ng-container>
         </ul>
     </div>
 </div>
-
  

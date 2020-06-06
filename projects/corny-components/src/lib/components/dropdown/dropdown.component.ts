@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, HostListener, ElementRef, asNativeElements } from '@angular/core';
+import { Component, OnInit, Input, HostListener, ElementRef } from '@angular/core';
 
 @Component({
   selector: 'c-dropdown',
@@ -9,19 +9,29 @@ export class DropdownComponent implements OnInit {
 
   @Input() options = [];
   @Input() filter = false;
-  selected = "-- select";
+  @Input() selected = "-- select";
   open = false;
   childIndex=0;
   currentChild: HTMLElement;
   list: HTMLElement;
+  inputFilter: string = "";
+  optionsFiltered;
 
-  
   constructor(private element: ElementRef) {
   }
 
-  ngOnInit() {
+  filterOptions() {
+    this.optionsFiltered = this.options.filter(opt => opt.startsWith(this.inputFilter));
   }
-  
+
+  ngOnInit() {
+    // NOT work TO FIX!
+    const filter = this.element.nativeElement.querySelector("#input-filter");
+    if(this.open && this.filter) {
+      filter.focus();
+    }
+  }
+
   @HostListener('window:keydown', ['$event'])
   keyNavigation(event: KeyboardEvent) {
     this.list = this.element.nativeElement.querySelector("ul");

@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, HostListener, Renderer2 } from '@angular/core';
 
 @Component({
   selector: 'hide-link',
@@ -7,7 +7,7 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class HideLinkComponent implements OnInit {
 
-  constructor() { }
+  constructor(private rend: Renderer2) { }
   @Input() show: boolean;
   @Input() toHide: string;
   element: HTMLElement;

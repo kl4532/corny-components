@@ -8,6 +8,10 @@ button {
     &:hover {
         color: blue;
     }
+    &:focus {
+        outline: 1px solid black;
+        outline-offset: -1px;
+    }
 }
 ul {
     list-style: none;

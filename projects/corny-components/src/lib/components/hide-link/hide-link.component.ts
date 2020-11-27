@@ -1,7 +1,7 @@
-import { Component, OnInit, Input, HostListener, Renderer2 } from '@angular/core';
+import { Component, OnInit, Input, Renderer2 } from '@angular/core';
 
 @Component({
-  selector: 'hide-link',
+  selector: 'c-hide-link',
   templateUrl: './hide-link.component.html',
   styleUrls: ['./hide-link.component.scss']
 })

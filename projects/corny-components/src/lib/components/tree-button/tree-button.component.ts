@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
-  selector: 'tree-button',
+  selector: 'c-tree-button',
   templateUrl: './tree-button.component.html',
   styleUrls: ['./tree-button.component.scss']
 })

@@ -3,7 +3,7 @@ import { Component, OnInit, Input, Output, EventEmitter  } from '@angular/core';
 
 
 @Component({
-  selector: 'searchbar',
+  selector: 'c-searchbar',
   templateUrl: './searchbar.component.html',
   styleUrls: ['./searchbar.component.scss']
 })

@@ -16,26 +16,29 @@ export class ButtonComponent implements OnInit {
     this.text = this.text || this.btnType;
   }
 
-  @HostListener('mousedown', ['$event']) 
-    triggerMouseClick() {
-      this.toggleActive(true);
-    }
-  @HostListener('keydown', ['$event']) 
-    triggerActive(event: KeyboardEvent) {
-      if(event.key === "Enter" || event.key === " ") {
-        this.toggleActive(true);
-      }
-    }
-  @HostListener('mouseup', ['$event']) 
-    deactivateMouse() {
-      this.toggleActive(false);
-    }
-  @HostListener('keyup', ['$event'])
-    triggerInactive(event: KeyboardEvent) {
-      if(event.key === "Enter" || event.key === " ") {
-        this.toggleActive(false);
-      }
-  } 
+
+  //toFIX
+
+  // @HostListener('mousedown', ['$event'])
+  //   triggerMouseClick() {
+  //     this.toggleActive(true);
+  //   }
+  // @HostListener('keydown', ['$event'])
+  //   triggerActive(event: KeyboardEvent) {
+  //     if(event.key === "Enter" || event.key === " ") {
+  //       this.toggleActive(true);
+  //     }
+  //   }
+  // @HostListener('mouseup', ['$event'])
+  //   deactivateMouse() {
+  //     this.toggleActive(false);
+  //   }
+  // @HostListener('keyup', ['$event'])
+  //   triggerInactive(event: KeyboardEvent) {
+  //     if(event.key === "Enter" || event.key === " ") {
+  //       this.toggleActive(false);
+  //     }
+  // }
 
   toggleActive(flag: boolean) {
     if(flag) {
@@ -44,5 +47,5 @@ export class ButtonComponent implements OnInit {
       this.rend.removeClass(this.el.nativeElement.children[0], 'activated');
     }
   }
-  
+
 }

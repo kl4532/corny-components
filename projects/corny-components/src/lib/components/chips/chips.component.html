@@ -1,0 +1,11 @@
+<div class="container">
+    <span
+          (click)="!disabled ? option.selected = !option.selected : null"
+          *ngFor="let option of options; let i = index"
+          (keyup.enter)="$event.target.click()"
+          (keyup.space)="$event.target.click()"
+          [ngClass]="{'active': option.selected, 'disabled': disabled}"
+          class="chip"
+          tabindex="0"
+    >{{option.name}}</span>
+  </div>

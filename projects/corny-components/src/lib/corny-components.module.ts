@@ -11,6 +11,7 @@ import { HideLinkComponent } from './components/hide-link/hide-link.component';
 import { CommonModule } from '@angular/common';
 import { CheckboxComponent } from './components/checkbox/checkbox.component';
 // Imports addedByScript
+import { ChipsComponent }  from './components/chips/chips.component';
 import { DropdownComponent }  from './components/dropdown/dropdown.component';
 import { FocusedDirective } from './directives/focused.directive';
 
@@ -18,13 +19,14 @@ import { FocusedDirective } from './directives/focused.directive';
 
 @NgModule({
   declarations: [
-    CornyComponentsComponent, 
-    SearchbarComponent, 
-    HideLinkComponent, 
+    CornyComponentsComponent,
+    SearchbarComponent,
+    HideLinkComponent,
     TreeButtonComponent,
     ButtonComponent,
     CheckboxComponent,
     // Declarations addedByScript
+ChipsComponent,
 DropdownComponent,
     FocusedDirective,
   ],
@@ -33,6 +35,6 @@ DropdownComponent,
     FormsModule,
     ReactiveFormsModule
   ],
-  exports: [CornyComponentsComponent]
+  exports: [CornyComponentsComponent],
 })
 export class CornyComponentsModule { }

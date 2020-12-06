@@ -13,7 +13,6 @@ import { CheckboxComponent } from './components/checkbox/checkbox.component';
 // Imports addedByScript
 import { ChipsComponent }  from './components/chips/chips.component';
 import { DropdownComponent }  from './components/dropdown/dropdown.component';
-import { FocusedDirective } from './directives/focused.directive';
 
 
 
@@ -28,7 +27,6 @@ import { FocusedDirective } from './directives/focused.directive';
     // Declarations addedByScript
 ChipsComponent,
 DropdownComponent,
-    FocusedDirective,
   ],
   imports: [
     CommonModule,

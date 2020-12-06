@@ -3,10 +3,9 @@
  */
 
  // Directives
-export * from './lib/directives/focused.directive';
 
  //Components
-export * from './lib/corny-components.component';
+// export * from './lib/corny-components.component';
 export * from './lib/corny-components.module';
 
 export * from './lib/components/button/button.component';

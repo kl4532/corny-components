@@ -1,8 +1,12 @@
-<button  
-    tabindex="0"  
+<button
+    tabindex="0"
     class="btn"
     [ngClass]="{'btn-text': btnType === 'text', 'btn-outlined': btnType === 'outlined'}"
     [disabled]="disabled"
+    (keydown.space)="toggleActive(true)"
+    (keyup.space)="toggleActive(false)"
+    (mousedown)="toggleActive(true)"
+    (mouseup)="toggleActive(false)"
 >{{text | uppercase}}</button>
 
 

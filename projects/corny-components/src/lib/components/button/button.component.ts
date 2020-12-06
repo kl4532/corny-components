@@ -16,29 +16,13 @@ export class ButtonComponent implements OnInit {
     this.text = this.text || this.btnType;
   }
 
-
-  //toFIX
-
-  // @HostListener('mousedown', ['$event'])
-  //   triggerMouseClick() {
-  //     this.toggleActive(true);
-  //   }
-  // @HostListener('keydown', ['$event'])
-  //   triggerActive(event: KeyboardEvent) {
-  //     if(event.key === "Enter" || event.key === " ") {
-  //       this.toggleActive(true);
-  //     }
-  //   }
-  // @HostListener('mouseup', ['$event'])
-  //   deactivateMouse() {
-  //     this.toggleActive(false);
-  //   }
-  // @HostListener('keyup', ['$event'])
-  //   triggerInactive(event: KeyboardEvent) {
-  //     if(event.key === "Enter" || event.key === " ") {
-  //       this.toggleActive(false);
-  //     }
-  // }
+  @HostListener('keydown', ['$event'])
+    triggerActive(event: KeyboardEvent) {
+      if(event.key === "Enter") {
+        event.preventDefault();
+        return false;
+      }
+  }
 
   toggleActive(flag: boolean) {
     if(flag) {

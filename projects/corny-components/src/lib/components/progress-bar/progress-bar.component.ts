@@ -1,52 +1,48 @@
 import {Component, ElementRef, EventEmitter, Input, OnChanges, OnInit, Output} from '@angular/core';
+import { SimpleChanges } from '@angular/core';
 
 @Component({
   selector: 'c-progress-bar',
   templateUrl: './progress-bar.component.html',
   styleUrls: ['./progress-bar.component.scss']
 })
-export class ProgressBarComponent implements OnInit{
+export class ProgressBarComponent implements OnInit, OnChanges{
 
-  constructor(private elem: ElementRef) { }
   inner: HTMLElement;
-  interval: any;
-  time: number;
-  @Input() timeout: number;
+  @Input() value: number;
+  /**
+   *
+   Two modes of ProgressBar are available:
+   - determinate(default), value between 0 and 100 is be provided
+   - indeterminate, when 'indeterminate' assigned to mode property
+   */
+  @Input() mode: string = 'determinate';
   @Output() finished = new EventEmitter<boolean>();
 
-  @Input()
-  public set start(val: boolean) {
-    if (val) {
-      console.log('progressStarted', val);
-      this.startProgress();
-    }
+  constructor(private elem: ElementRef) {
   }
 
   ngOnInit(): void {
+    if(this.mode === 'determinate') {
+      this.inner = this.elem.nativeElement.querySelector('.inner');
+      this.inner.style.width = this.value + '%';
+    }
   }
 
-  process() {
-    if( this.time <= 0){
-      this.inner.style.width = '0%';
-      clearInterval(this.interval);
-      this.finished.emit(true);
-      return;
+  ngOnChanges() {
+    console.log('mode', this.mode);
+    if(this.mode === 'determinate') {
+      this.inner = this.elem.nativeElement.querySelector('.inner');
+      if(this.value<0) {
+        this.value = 0;
+      }
+
+      if(this.value>100) {
+        this.value = 100;
+      }
+      this.inner.style.width = this.value + '%';
     }
 
-    this.time  = this.time - 0.01;
-    const procent = this.time * 100 /this.timeout;
-    this.setProgress(procent);
-  }
-
-  startProgress() {
-    this.inner = this.elem.nativeElement.querySelector('.inner');
-    this.time = this.timeout;
-    this.setProgress(100);
-    this.interval = setInterval( () => this.process(),10);
-  }
-
-  setProgress(proc: number) {
-    this.inner.style.width = proc + "%";
   }
 
 }

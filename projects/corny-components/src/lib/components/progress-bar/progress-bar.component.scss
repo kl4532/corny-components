@@ -1,12 +1,39 @@
+:host {
+  width: 100%;
+  margin: 2px 0;
+  background-color: #d7c500;
+}
+
 .outer {
   background-color: black;
   //border-radius: 13px; /* (height of inner div) / 2 + padding */
   padding: 3px;
 
   .inner {
-    background-color: #d7c500;
-    width: 100%; /* Adjust with JavaScript */
+    background-color: #4a8df8;
+    width: 0; /* Adjust with JavaScript */
     height: 10px;
     border-radius: 0px 10px 10px 0px;
   }
 }
+
+.ind-inner{
+  animation-duration: 3s;
+  animation-name: slidein;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+@keyframes slidein {
+  from {
+    margin-left: 100%;
+    width: 200%;
+  }
+
+  to {
+    margin-left: 0%;
+    width: 100%;
+  }
+}
+
+

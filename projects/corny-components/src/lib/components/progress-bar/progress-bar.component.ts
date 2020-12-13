@@ -1,4 +1,14 @@
-import {Component, ElementRef, EventEmitter, Input, OnChanges, OnInit, Output} from '@angular/core';
+import {
+  AfterViewChecked,
+  AfterViewInit,
+  Component,
+  ElementRef,
+  EventEmitter,
+  Input,
+  OnChanges,
+  OnInit,
+  Output
+} from '@angular/core';
 import { SimpleChanges } from '@angular/core';
 
 @Component({
@@ -6,7 +16,7 @@ import { SimpleChanges } from '@angular/core';
   templateUrl: './progress-bar.component.html',
   styleUrls: ['./progress-bar.component.scss']
 })
-export class ProgressBarComponent implements OnInit, OnChanges{
+export class ProgressBarComponent implements OnInit, OnChanges, AfterViewChecked{
 
   inner: HTMLElement;
   @Input() value: number;
@@ -23,16 +33,18 @@ export class ProgressBarComponent implements OnInit, OnChanges{
   }
 
   ngOnInit(): void {
-    if(this.mode === 'determinate') {
-      this.inner = this.elem.nativeElement.querySelector('.inner');
+  }
+
+  ngAfterViewChecked() {
+    this.inner = this.elem.nativeElement.querySelector('.front');
+    if(this.inner && this.mode !== 'indeterminate') {
       this.inner.style.width = this.value + '%';
     }
   }
 
   ngOnChanges() {
-    console.log('mode', this.mode);
-    if(this.mode === 'determinate') {
-      this.inner = this.elem.nativeElement.querySelector('.inner');
+    this.inner = this.elem.nativeElement.querySelector('.front');
+    if(this.inner && this.mode !== 'indeterminate') {
       if(this.value<0) {
         this.value = 0;
       }
@@ -42,7 +54,6 @@ export class ProgressBarComponent implements OnInit, OnChanges{
       }
       this.inner.style.width = this.value + '%';
     }
-
   }
 
 }

@@ -1,16 +1,13 @@
 <!--Determinate -->
-<!--<div *ngIf="mode === 'determinate'">-->
-  <div class="outer">
-    <div class="inner"></div>
+<div *ngIf="mode !== 'indeterminate'">
+  <div class="back">
+    <div class="front"></div>
   </div>
-<!--</div>-->
-
+</div>
 
 <!--Indeterminate -->
 <div *ngIf="mode === 'indeterminate'">
-  <div class="outer">
-    <div class="ind-inner"></div>
-  </div>
+  <div class="indeterminate"></div>
 </div>
 
 

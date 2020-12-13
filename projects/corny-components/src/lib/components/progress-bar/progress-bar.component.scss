@@ -1,38 +1,42 @@
 :host {
   width: 100%;
   margin: 2px 0;
-  background-color: #d7c500;
 }
 
-.outer {
-  background-color: black;
-  //border-radius: 13px; /* (height of inner div) / 2 + padding */
-  padding: 3px;
-
-  .inner {
-    background-color: #4a8df8;
-    width: 0; /* Adjust with JavaScript */
-    height: 10px;
-    border-radius: 0px 10px 10px 0px;
-  }
+.back {
+  background: #a9c8fe;
+}
+.front {
+  background-color: #4a8df8;
+  width: 0; /* Adjust with JavaScript */
+  height: 10px;
 }
 
-.ind-inner{
-  animation-duration: 3s;
-  animation-name: slidein;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
+.indeterminate {
+  width: 100%;
+  height: 10px;
+  position:relative;
+  overflow:hidden;
+  background: #a9c8fe;
 }
 
-@keyframes slidein {
+.indeterminate:after {
+  content: " ";
+  width:200px;
+  height:170%;
+  position:absolute;
+  animation: blue-line 2s linear infinite;
+  -webkit-animation: blue-line 2s linear infinite;
+  z-index:2;
+  background: #4a8df8;
+}
+
+@keyframes blue-line {
   from {
-    margin-left: 100%;
-    width: 200%;
+    left:-200px;
   }
-
   to {
-    margin-left: 0%;
-    width: 100%;
+    left:100%;
   }
 }
 

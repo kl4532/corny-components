@@ -1,11 +1,7 @@
 {
   "name": "corny-components",
-  "version": "0.1.4",
+  "version": "0.1.7",
   "dependencies": {
     "tslib": "^2.0.0"
-  },
-  "peerDependencies": {
-    "@angular/common": "^10.2.9",
-    "@angular/core": "^10.2.9"
   }
 }

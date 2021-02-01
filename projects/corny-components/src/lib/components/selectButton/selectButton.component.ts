@@ -1,11 +1,28 @@
-import {Component, EventEmitter, Input, Output} from '@angular/core';
+import {
+  ChangeDetectorRef,
+  Component,
+  EventEmitter,
+  forwardRef,
+  Input,
+  OnInit,
+  Output
+} from '@angular/core';
+import {ControlValueAccessor, NG_VALUE_ACCESSOR} from "@angular/forms";
+
+export const SELECTBUTTON_VALUE_ACCESSOR: any = {
+  provide: NG_VALUE_ACCESSOR,
+  useExisting: forwardRef(() => SelectButtonComponent),
+  multi: true
+};
 
 @Component({
   selector: 'c-selectButton',
   templateUrl: './selectButton.component.html',
+  providers: [SELECTBUTTON_VALUE_ACCESSOR],
   styleUrls: ['./selectButton.component.scss']
 })
-export class SelectButtonComponent {
+
+export class SelectButtonComponent implements ControlValueAccessor, OnInit{
 
   @Input() options: any;
 
@@ -19,13 +36,27 @@ export class SelectButtonComponent {
 
   onModelTouched: Function = () => {};
 
+  multi: boolean;
   value: any;
-  valueChanged: boolean;
 
-  constructor() {}
+  constructor(public cd: ChangeDetectorRef) {};
+
+  ngOnInit() {
+    this.value = [];
+    this.options.map((option, i) => {
+      option.selected ? this.value.push(option.name) : null;
+    })
+
+    this.onModelChange(this.value);
+
+    this.onChange.emit({
+      value: this.value
+    });
+  }
 
   writeValue(value: any): void {
     this.value = value;
+    this.cd.markForCheck();
   }
   registerOnChange(fn: any): void {
     this.onModelChange = fn;
@@ -49,10 +80,26 @@ export class SelectButtonComponent {
       this.options[i].selected = false;
       this.removeOption(option);
     }
-  }
-  removeOption(option: any): void {
-    this.value = this.value.filter(val => val !== option.name);
+
+    this.onOptionClick.emit({
+      originalEvent: event,
+      option: option,
+      index: i
+    });
+
+    this.onModelChange(this.value);
+
+    this.onChange.emit({
+      originalEvent: event,
+      value: this.value
+    });
+
   }
 
-  focusedChip: HTMLElement;
+  removeOption(option: any): void {
+    if(this.value) {
+      this.value = this.value.filter(val => val !== option.name);
+    }
+  }
+
 }

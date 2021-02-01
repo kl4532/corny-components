@@ -11,8 +11,8 @@ import { HideLinkComponent } from './components/hide-link/hide-link.component';
 import { CommonModule } from '@angular/common';
 import { CheckboxComponent } from './components/checkbox/checkbox.component';
 // Imports addedByScript
+import { SelectButtonComponent }  from './components/selectButton/selectButton.component';
 import { ProgressBarComponent }  from './components/progress-bar/progress-bar.component';
-import { ChipsComponent }  from './components/chips/chips.component';
 import { DropdownComponent }  from './components/dropdown/dropdown.component';
 
 
@@ -26,8 +26,8 @@ import { DropdownComponent }  from './components/dropdown/dropdown.component';
     ButtonComponent,
     CheckboxComponent,
     // Declarations addedByScript
+SelectButtonComponent,
 ProgressBarComponent,
-ChipsComponent,
 DropdownComponent,
   ],
   imports: [

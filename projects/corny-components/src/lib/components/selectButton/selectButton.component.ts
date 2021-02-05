@@ -4,7 +4,6 @@ import {
   EventEmitter,
   forwardRef,
   Input,
-  OnInit,
   Output
 } from '@angular/core';
 import {ControlValueAccessor, NG_VALUE_ACCESSOR} from "@angular/forms";
@@ -22,7 +21,7 @@ export const SELECTBUTTON_VALUE_ACCESSOR: any = {
   styleUrls: ['./selectButton.component.scss']
 })
 
-export class SelectButtonComponent implements ControlValueAccessor, OnInit{
+export class SelectButtonComponent implements ControlValueAccessor {
 
   @Input() options: any;
 
@@ -40,19 +39,6 @@ export class SelectButtonComponent implements ControlValueAccessor, OnInit{
   value: any;
 
   constructor(public cd: ChangeDetectorRef) {};
-
-  ngOnInit() {
-    this.value = [];
-    this.options.map((option, i) => {
-      option.selected ? this.value.push(option.name) : null;
-    })
-
-    this.onModelChange(this.value);
-
-    this.onChange.emit({
-      value: this.value
-    });
-  }
 
   writeValue(value: any): void {
     this.value = value;

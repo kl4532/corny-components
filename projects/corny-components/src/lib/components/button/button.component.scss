@@ -44,6 +44,30 @@
 
 .btn-outlined {
     color: black;
-    background-color: inherit;
+    background-color: inherit !important;
     border: 0.5px solid rgb(66, 94, 255);
+}
+//color version
+.c-button-primary {
+  background-color: #4a8df8;
+}
+
+.c-button-secondary {
+  background-color: lightseagreen;
+}
+
+.c-button-success {
+  background-color: forestgreen;
+}
+
+.c-button-info {
+  background-color: cornflowerblue;
+}
+
+.c-button-warning {
+  background-color: yellow;
+}
+
+.c-button-danger {
+  background-color: red;
 }

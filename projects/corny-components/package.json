@@ -1,6 +1,6 @@
 {
   "name": "corny-components",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "dependencies": {
     "tslib": "^2.0.0"
   }

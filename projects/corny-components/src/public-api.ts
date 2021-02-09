@@ -2,6 +2,7 @@
  * Public API Surface of corny-components
  */
  // Directives
+export * from './lib/directives/c-button.directive';
 
  //Components
 // export * from './lib/corny-components.component';

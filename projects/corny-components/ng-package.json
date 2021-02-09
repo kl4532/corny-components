@@ -2,6 +2,7 @@
   "$schema": "../../node_modules/ng-packagr/ng-package.schema.json",
   "dest": "../../dist/corny-components",
   "lib": {
+    "styleIncludePaths": ["./src/scss/"],
     "entryFile": "src/public-api.ts"
   },
   "deleteDestPath": false

@@ -14,6 +14,7 @@ import { CheckboxComponent } from './components/checkbox/checkbox.component';
 import { SelectButtonComponent }  from './components/selectButton/selectButton.component';
 import { ProgressBarComponent }  from './components/progress-bar/progress-bar.component';
 import { DropdownComponent }  from './components/dropdown/dropdown.component';
+import { CButtonDirective } from './directives/c-button.directive';
 
 
 
@@ -29,6 +30,7 @@ import { DropdownComponent }  from './components/dropdown/dropdown.component';
 SelectButtonComponent,
 ProgressBarComponent,
 DropdownComponent,
+CButtonDirective,
   ],
   imports: [
     CommonModule,

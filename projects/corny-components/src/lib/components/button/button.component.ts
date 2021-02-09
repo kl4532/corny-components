@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, ElementRef, HostListener, Renderer2  } from '@angular/core';
+import {Component, OnInit, Input, ElementRef, HostListener, Renderer2, HostBinding} from '@angular/core';
 
 @Component({
   selector: 'c-button',
@@ -6,6 +6,9 @@ import { Component, OnInit, Input, ElementRef, HostListener, Renderer2  } from '
   styleUrls: ['./button.component.scss']
 })
 export class ButtonComponent implements OnInit {
+
+  @HostBinding('class') class = 'someClass';
+
   @Input() btnType: string = "Button";
   @Input() text: string;
   @Input() disabled: boolean = false;

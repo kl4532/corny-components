@@ -1,9 +1,10 @@
 @import "global.scss";
+@import "../../node_modules/lato-font/css/lato-font.min.css";
 
 .btn {
   padding: 0.5em 1em;
   color: #ffffff;
-  border-radius: 1%;
+  border-radius: 0.2em;
   border: none;
   &:hover {
     opacity: 0.8;

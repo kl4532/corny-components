@@ -1,8 +1,26 @@
-:root {
-  --primary: royalblue;
-  --secondary: lightseagreen;
-  --success: forestgreen;
-  --warning: orange;
-  --info: cornflowerblue;
-  --danger: red;
-}
+//:root {
+//  --primary: royalblue;
+//  --secondary: lightseagreen;
+//  --success: forestgreen;
+//  --warning: orange;
+//  --info: cornflowerblue;
+//  --danger: red;
+//}
+
+// COLORS
+$c-main: #3269AC;
+$c-shadow: #323232;
+$c-hover: rgba(50, 105, 172, 0.3);
+
+$white: #ffff;
+$black: #151515;
+$grey: #828282;
+
+$primary: #3269AC;
+$secondary: lightseagreen;
+$success: forestgreen;
+$warning: orange;
+$info: cornflowerblue;
+$danger: red;
+
+

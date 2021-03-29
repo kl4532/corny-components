@@ -1,9 +1,11 @@
 @import "global.scss";
 @import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
 
+// BUTTONS
+
 .btn {
   padding: 0.5em 1em;
-  color: #ffffff;
+  color: $white;
   border-radius: 0.2em;
   border: none;
   &:hover {
@@ -11,7 +13,7 @@
   }
   outline: none;
   &:focus {
-    outline: 1px solid rgb(0, 0, 0);
+    outline: 1px solid $black;
     outline-offset: 1px;
   }
   &:active{
@@ -48,56 +50,69 @@
   }
 }
 
+.btn-rounded {
+  border-radius: 50%;
+  padding: 0.3em;
+}
+
 // maybe refactor this crap??
 
 //color version
 
 .c-button-primary {
-  background-color: var(--primary);
+  background-color: $primary;
 }
 
 .c-button-primary.btn-outlined {
-  border: 0.5px solid var(--primary);
+  border: 0.5px solid $primary;
 }
 
 .c-button-secondary {
-  background-color: var(--secondary);
+  background-color: $secondary;
 }
 
 .c-button-secondary.btn-outlined {
-  border: 0.5px solid var(--secondary);
+  border: 0.5px solid $secondary;
 }
 
 .c-button-success {
-  background-color: var(--success);
+  background-color: $success;
 }
 
 .c-button-success.btn-outlined {
-  border: 0.5px solid var(--success);
+  border: 0.5px solid $success;
 }
 
 .c-button-info {
-  background-color: var(--info);
+  background-color: $info;
 }
 
 .c-button-info.btn-outlined {
-  border: 0.5px solid var(--info);
+  border: 0.5px solid $info;
 }
 
 .c-button-warning {
-  background-color: var(--warning);
+  background-color: $warning;
 }
 
 .c-button-warning.btn-outlined {
-  border: 0.5px solid var(--warning);
+  border: 0.5px solid $warning;
 }
 
 .c-button-danger {
-  background-color: var(--danger);
+  background-color: $danger;
 }
 
 .c-button-danger.btn-outlined {
-  border: 0.5px solid var(--danger);
+  border: 0.5px solid $danger;
+}
+
+.c-button-inherit {
+  background-color: inherit;
+}
+
+.c-button-inherit.btn-outlined {
+  border: 0.5px solid inherit;
 }
 
 

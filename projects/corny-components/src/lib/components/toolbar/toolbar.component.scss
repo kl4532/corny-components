@@ -1,0 +1,11 @@
+@import '../../scss/corny-styles';
+
+:host {
+  display: flex;
+  justify-content: space-between;
+
+  color: white;
+  background-color: $secondary;
+  width: 100%;
+  padding: 2px 5px;
+}

@@ -11,6 +11,7 @@ import { HideLinkComponent } from './components/hide-link/hide-link.component';
 import { CommonModule } from '@angular/common';
 import { CheckboxComponent } from './components/checkbox/checkbox.component';
 // Imports addedByScript
+import { ToolbarComponent }  from './components/toolbar/toolbar.component';
 import { SelectButtonComponent }  from './components/selectButton/selectButton.component';
 import { ProgressBarComponent }  from './components/progress-bar/progress-bar.component';
 import { DropdownComponent }  from './components/dropdown/dropdown.component';
@@ -27,6 +28,7 @@ import { CButtonDirective } from './directives/c-button.directive';
     ButtonComponent,
     CheckboxComponent,
     // Declarations addedByScript
+ToolbarComponent,
 SelectButtonComponent,
 ProgressBarComponent,
 DropdownComponent,
